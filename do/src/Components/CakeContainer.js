@@ -1,4 +1,5 @@
 import React from 'react'
+import { buyCake } from '../redux'
 
 const CakeContainer = () => {
   return (
@@ -7,6 +8,19 @@ const CakeContainer = () => {
         <button>Buy Cakes</button>
     </div>
   )
+}
+
+
+const mapStateToProps = state => {
+  return{
+    numberOfCakes : state.numberOfCakes
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return{
+    buyCake : () => dispatch(buyCake)
+  }
 }
 
 export default CakeContainer
